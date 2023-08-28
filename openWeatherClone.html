@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- TUTTI I CODICI META -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Il tuo webSite per verificare e collaborare con il nostro API sul tuo sito personale.... Scopri come!">
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Open Weather | CLONE 1</title>
+    <script src="https://kit.fontawesome.com/031ebd0324.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/openWeatherClone_1/style.css">
+    <link rel="shortcut icon" href="/openWeatherClone_1/img/sun.png" type="image/x-icon">
+</head>
+<body>
+    <!-- GENERAL UP BUTTON -->
+    <div class="generalUpButton" onclick="goUp()">
+        <i class="fa fa-caret-up"></i>
+    </div>
+
+    <header>
+        <div class="logo">
+            <img src="/openWeatherClone_1/img/logo_white_cropped.png" alt="open Weather logo">
+        </div>
+        <div class="navContent">
+            <div class="search-content">
+                <i class="fa fa-search"><input type="text" placeholder="Wheater in your city"></i>
+            </div>  <!-- FINISHED SEARCH CONTENT-->
+            <div class="navLinks">
+                <a href="#" target="_self">Guide</a>
+                <a href="#" target="_self">API</a>
+                <a href="#" target="_self">Dashboard</a>
+                <a href="#" target="_self">Marketplace</a>
+                <a href="#" target="_self">Pricing</a>
+                <a href="#" target="_self">Maps</a>
+                <a href="#" target="_self">Our Initiatives</a>
+                <a href="#" target="_self">Partners</a>
+                <a href="#" target="_self">Blog</a>
+                <a href="#" class="active" target="_self">For Business</a>
+                <a href="#" target="_self">Sign in</a>
+                <div class="support-dropdown">
+                    <a  id="showLink" onclick="showDrop()">Support <span class="fa fa-caret-down"></span></a>
+                    <div class="dropdownlist" id="dropdownlist">
+                        <div class="dropdownlinks">
+                        <a href="#" target="_self">FAQ</a>
+                        <a href="#" target="_self">How to start</a>
+                        <a href="#" target="_self">Ask a question</a>
+                    </div>
+                    </div>  <!--Droplist END-->
+                </div> <!--Droplist container END-->
+            </div> <!--NAV LINKS-->
+        </div>
+    </header>
+
+
+    <main>
+        <div class="welcomeImg">
+        <div class="middle-content">
+            <h1>OpenWeather</h1>
+            <h3>Weather forecasts, 
+                nowcasts and history in a fast
+                 and elegant way</h3>
+        </div>
+    </div> <!--BANNER WELCOME IMAGE-->
+
+    <div class="search-city">
+        <div class="search-cont middle-content">
+        <div class="search-wrap">
+            <input type="text" placeholder="Search city">
+            <button>Search</button>
+        </div>
+
+        <div class="differentLocation">
+            <i class="fa fa-location-arrow"></i>
+            <span>Different Weather?</span>
+            <div class="selectTempMis">
+                <span>Metric: °C, m/s</span>
+                <span>Imperial: °F, mph</span>
+            </div>
+        </div>
+        </div> <!--search-city-->
+    </div>
+    <!-- BIG DATA CONTAINER PER LA MISURA TEMP E MAPS -->
+    <div class="big-data-temp">
+        <!-- CONTENITORE PER LA PARTE PRIMA -->
+        <div class="temp-cont middle-content">
+            <div class="first-cont">
+                <!-- CONT PER LA PARTE SINISTRA -->
+                <div class="temp-details">
+                    <div class="city-and-data">
+                        <span class="data" id="data"><span id="mouth-day">Aug 3, </span><span class="hour"></span><span class="session"> </span></span>
+                        <span class="city-name">Milan, <span class="countryName">IT</span></span>
+                    </div>
+                    <div class="details">
+                        <div class="temperature">
+                            <img src="/openWeatherClone_1/img/cloudy.png" alt="cloudy">
+                            <span class="temp-num">30°C</span>
+                        </div>
+                        <div class="weather-alert">
+                            Orange wind warning <span>+2</span>
+                        </div>
+                        <span>Feels like 32°C. Scattered clouds. Light breeze </span>
+                        <div class="weather-items-text">
+                            <i class="fa fa-location-arrow"><span class="wind-speed">2.1m/s S</span></i>
+                            <i class="fa fa-tachometer-fast"><span class="wind-deg">1004hPa</span></i><br>
+                            <span class="humidity">Humidity:</span>
+                            <span class="UV">UV: 5</span><br>
+                            <span class="dew-point">Dew point: 20°C</span>
+                            <span class="visibility">Visibilty: 10.0km</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- PARTE DELLA MAPPA DESTRA -->
+                <div class="maps-details">
+                    <img src="/brand/hero_maps_static_api.png" alt="maps">
+                </div>
+            </div>
+        </div>  <!--temp-cont-->
+
+        <div class="second-cont middle-content">
+            <div class="forecast-canva">
+                <span>Hourly forecast</span>
+                <div class="scroll-canva">
+                <img src="/openWeatherClone_1/img/canvas.png" alt="Forecast canva"></div>
+            </div>
+            <div class="day-forecast">
+                <span>8-day forecast</span>
+                <div class="day-list">
+                    <li><span class="list-day">Thu,Aug 03</span>
+                    <i><img src="/openWeatherClone_1/img/cloudy.png" >
+                    <span class="temp">30/20°C</span>
+                    </i>
+                    <span>light rain <i class="fa fa-caret-down"></i></span>
+                    </li> <!--FINE-->
+                    <li><span class="list-day">Thu,Aug 03</span>
+                    <i><img src="/openWeatherClone_1/img/cloudy.png" >
+                    <span class="temp">30/20°C</span>
+                    </i>
+                    <span>light rain <i class="fa fa-caret-down"></i></span>
+                    </li> <!--FINE-->
+                    <li><span class="list-day">Thu,Aug 03</span>
+                    <i><img src="/openWeatherClone_1/img/cloudy.png" >
+                    <span class="temp">30/20°C</span>
+                    </i>
+                    <span>light rain <i class="fa fa-caret-down"></i></span>
+                    </li> <!--FINE-->
+                    <li><span class="list-day">Thu,Aug 03</span>
+                    <i><img src="/openWeatherClone_1/img/cloudy.png" >
+                    <span class="temp">30/20°C</span>
+                    </i>
+                    <span>light rain <i class="fa fa-caret-down"></i></span>
+                    </li> <!--FINE-->
+                    <li><span class="list-day">Thu,Aug 03</span>
+                    <i><img src="/openWeatherClone_1/img/cloudy.png" >
+                    <span class="temp">30/20°C</span>
+                    </i>
+                    <span>light rain <i class="fa fa-caret-down"></i></span>
+                    </li> <!--FINE-->
+                    <li><span class="list-day">Thu,Aug 03</span>
+                    <i><img src="/openWeatherClone_1/img/cloudy.png" >
+                    <span class="temp">30/20°C</span>
+                    </i>
+                    <span>light rain <i class="fa fa-caret-down"></i></span>
+                    </li> <!--FINE-->
+                    <li><span class="list-day">Thu,Aug 03</span>
+                    <i><img src="/openWeatherClone_1/img/cloudy.png" >
+                    <span class="temp">30/20°C</span>
+                    </i>
+                    <span>light rain <i class="fa fa-caret-down"></i></span>
+                    </li> <!--FINE-->
+                    <li><span class="list-day">Thu,Aug 03</span>
+                    <i><img src="/openWeatherClone_1/img/cloudy.png" >
+                    <span class="temp">30/20°C</span>
+                    </i>
+                    <span>light rain <i class="fa fa-caret-down"></i></span>
+                    </li> <!--FINE-->
+                </div>
+            </div>
+        </div>
+    </div> <!--big-data-temp-->
+
+    <!-- BRAND CONTENT  -->
+    <div class="brand">
+        <div class="brand-scroll middle-content">
+            <img src="/brand/2560px-JCDecaux_logo.svg.png">
+            <img src="/brand/5a10a8e19642de34b6b65d0d.png">
+            <img src="/brand/6102dbf43de48b00044eb5af.png">
+            <img src="brand/Airbnb_Logo_Bélo.svg.png">
+            <img src="brand/Amazon-Logo.png">
+            <img src="brand/bayer-5-logo-png-transparent.png">
+            <img src="brand/Booking-Logo-PNG.png">
+            <img src="brand/bp-logo-png-transparent.png">
+            <img src="brand/Chevron_Logo.svg.png">
+            <img src="/brand/Facebook_Logo_(2019).png">
+            <img src="/brand/Gett-Logo-2017.png">
+            <img src="/brand/google-logo-transparent.png">
+            <img src="/brand/Microsoft_logo_(2012).svg.png">
+            <img src="/brand/PepsiCo_logo.svg.png">
+            <img src="/brand/warner-bros-logo-1D6B588E26-seeklogo.com.png">
+        </div>
+    </div> <!--BRAND FINE-->
+
+    <div class="alert-red">
+        <p>Leaving everything behind, people are fleeing conflict in Ukraine. They need shelter, 
+            food, and water. When you subscribe to our service, you can join us to help with donation of 
+            just of 20 €.
+            Openweather will add 40 € to each donation and send it to Disastrous Emergency Committee’s 
+            (DEC) Ukrainian Humanitarian Appeal.</p>
+    </div>
+
+    <div class="api-details">
+        <div class="api-container middle-content">
+        <div>
+            <div class="head">
+                <span class="orange-txt">
+                    APIs
+                </span>
+                <h1>One Call API 3.0</h1>
+            </div>
+            <p>Choose the subscription plan "One Call by Call" and get 
+                access to the various data for any coordinates with One Call API 3.0.
+                1,000 API calls per day for free! Pay as you call. 
+            </p>
+            <div class="API-tab">
+                <table style="width: 300px;">
+                    <tr><th style="width: 55%;">Included Data</th><th style="width: 30%;">Time</th></tr>
+                    <tr><td style="width: 55%;"><b>Current </b>weather</td><td style="width: 40%;">Now</td></tr>
+                    <tr><td style="width: 
+                    55%;"><b>Minute </b>forecast</td><td style="width: 40%;">Next hour</td></tr>
+                    <tr><td style="width: 55%;"><b>Hourly </b>forecast</td><td style="width: 40%;">Next 48 hours</td></tr>
+                    <tr><td style="width: 55%;"><b>Daily </b>forecast</td><td style="width: 40%;">Next 8 days</td></tr>
+                    <tr><td style="width: 55%;"><b>Historical data </b>by any timestamp</td><td style="width: 40%;">40+ years back</td></tr>
+                    <tr><td style="width: 55%;">National weather alerts</td><td style="width: 40%;">All available data</td></tr>
+                    <tr><td style="width: 55%;">History <b>daily aggregation</b></td><td style="width: 40%;">40+ years back</td></tr>
+                </table>
+            </div>
+        </div> <!--FINE DIV DETTAGLI-->
+        <div class="desk-only">
+            <img src="/openWeatherClone_1/img/one_call_api.png" alt="call api img png">
+        </div>
+        </div>
+    </div> <!--API DETTAILS-->
+
+    <div class="section" style="background-color: #EB6E4B;">
+        <div class="section-dettails middle-content">
+            <div class="section-txt">
+                <h2 class="big">
+                    Use our <span> Professional collections </span>  to get extended weather data for any coordinates on the globe
+                </h2>
+                <span>For professionals and specialists with middle and large sized project, we recommend our Professional collections. They include either 
+                    an extended data sets, or various tools for receiving and displaying data, etc.</span>
+            </div>
+            <div class="section-dettails-in-img">
+                <div class="first-dettail">
+                    <i class="fa fa-location"></i>
+                    <h2>Current weather</h2>
+                    <span>(Current)</span>
+                </div> <!--First dettail-->
+                <div class="first-dettail">
+                    <i class="fa fa-clock-o"></i>
+                    <h2>Hourly forecast</h2>
+                    <span>(4 days)</span>
+                </div> <!--First dettail-->
+                <div class="first-dettail">
+                    <i class="fa fa-calendar"></i>
+                    <h2>Daily forecast</h2>
+                    <span>(16 days)</span>
+                </div> <!--First dettail-->
+                <div class="first-dettail">
+                    <i class="fa fa-calendar-plus-o"></i>
+                    <h2>Climatic forecast</h2>
+                    <span>(30 days)</span>
+                </div> <!--First dettail-->
+                <div class="first-dettail">
+                    <i class="fa fa-calendar-minus-o"></i>
+                    <h2>Historical weather</h2>
+                    <span>(40+ year back)</span>
+                </div> <!--First dettail-->
+            </div> <!--Section dettail in img -->
+            <div class="note">
+                <div>
+                <span><b>Called by:</b> <br>
+                    <p> geographic coordinates, zip/post code, 
+                        city name, city ID, number of cities (only in current weather and forecast APIs) </p>
+                </span>
+                </div>
+                <div class="btn">
+                    <button>
+                        Learn more
+                    </button>
+                </div>
+            </div>
+        </div> <!--section dettails-->
+    </div><!--section dettails-->
+
+    <div class="more-details">
+        <div class="txtdetailone middle-content">
+            <div class="first-txt-details">
+                <p>For each point on the globe, we 
+                    provide historical, current and forecasted weather data via light-speed APIs.
+                </p>
+                <p>Minute-by-minute forecast</p>
+                <p><b>Other forecasts:</b><br>
+                    hourly (4-day), daily (16-day), 30-day climate forecast</p>
+                    <p><b>Historical Data:</b><br>
+                        with 40-year archive for any coordinates</p>
+            </div>
+            <div class="second-txt-details">
+                <span>Wheater data</span>
+                <h2>Weather for <span style="color: #EB6E4B;">any</span> geographic coordinates on the globe</h2>
+                <img src="/openWeatherClone_1/img/historical_data_any_location.png" width="100%" alt="forecast data">
+            </div>
+        </div> <!--THE END ONE-->
+        <div class="txtdtailtwo">
+            <div class="middle-content">
+            <div class="first-two-details" style="padding: 0 30px 0 0;">
+                <span style="color: #EB6E4B; font-weight: 300; font-size: 14px; margin-bottom: 15px;">Wheater data</span>
+                <h2 style="color: #48484a;margin-bottom: 12px; font-weight: 550;">Forecasted weather data</h2>
+                <img src="/openWeatherClone_1/img/forecasted_weather_data.png" width="100%" alt="forecast data">
+            </div>
+            <div class="second-two-details">
+                <p>Detailed forecasts available by city name, city ID, geographic coordinates or postal/ZIP code. </p>
+                <div class="how-obtain-details">
+                    <h3>How to obtain</h3>
+                    <p>API <br> Bulks</p>
+                    <p>A variety of subscriptions with various limits on calls/min, data availability, and service</p>
+                </div>
+            </div>
+        </div>
+        </div><!--FINE END TWO -->
+    </div>
+    <div class="more-details">
+        <div class="txtdetailone middle-content">
+            <div class="first-txt-details" style="width: 50%;">
+                <p style="font-size: 0.8rem;">Our technology Time Machine, has allowed 
+                    us to enhance data in the Historical 
+                    Weather Collection: historical weather
+                     data is now available for any coordinates 
+                     and the depth of historical data has been
+                      extended to 40 years.
+                </p>
+                <p><b>How to obtain:</b><br>
+                    hourly (4-day), daily (16-day), 30-day climate forecast</p>
+                    <p style="font-size: 0.8rem;"><b>Historical Data:</b><br>
+                        Marketplace of prepared data sets
+                        (cities, zip codes, grids)
+                        
+                        On-the-fly bulks
+                        for customized lists of coordinates
+                        
+                        APIs (city-based, up to 1 year back; subscriptions with various 
+                        limits on calls/min, data availability, and service) </p>
+            </div>
+            <div class="second-txt-details">
+                <span>Wheater data</span>
+                <h2>Historical weather data</h2>
+                <img src="/openWeatherClone_1/img/historical_data.png" style="width: 350px !important;" alt="forecast data">
+            </div>
+        </div> <!--THE END ONE-->
+        <div class="txtdtailtwo">
+            <div class="middle-content">
+            <div class="first-two-details" style="padding: 0 30px 0 0; width: 50%;">
+                <span style="color: #EB6E4B; font-weight: 300; font-size: 14px; margin-bottom: 15px;">Wheater data</span>
+                <h2 style="color: #48484a;margin-bottom: 12px; font-weight: 550;">Forecasted weather data</h2>
+                <img src="/openWeatherClone_1/img/current.png" width="100%" alt="forecast data">
+            </div>
+            <div class="second-two-details" style="width: 50%;">
+                <p style="font-size: 0.8rem; line-height: 20px;">Access current weather data for any location on Earth 
+                    including over 200,000 cities! The data is frequently 
+                    updated based on the global and local weather models,
+                     satellites, radars and a vast network of weather stations.</p>
+                <div class="how-obtain-details">
+                    <h3>How to obtain</h3>
+                    <p style="font-size: 0.8rem; line-height: 20px;">API <br> (subscriptions with various limits on calls/min, data availability, and service)  
+                        <br> Prepared bulks <br>(cities, zip codes)</p>
+                    <p style="font-size: 0.8rem;">A variety of subscriptions with various limits on calls/min, data availability, and service</p>
+                </div>
+            </div>
+        </div>
+        </div><!--FINE END TWO -->
+    </div>
+    </main>
+
+
+    <script src="/openWeatherClone_1/index.js"></script>
+    <script src="/openWeatherClone_1/dettagli.js"></script>
+    <script src="/openWeatherClone_1/API.js"></script>
+    
+</body>
+</html>
